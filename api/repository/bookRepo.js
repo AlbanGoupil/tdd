@@ -51,8 +51,10 @@ export default (Book) => {
   const deleteBook = (id) => {
     let bookToDeleteIndex = books.findIndex((b) => b.isbn13 === id);
     let deletedBook = books.splice(bookToDeleteIndex, 1);
-
-    return deletedBook;
+    if(bookToDeleteIndex < 0){
+      return null;
+    }
+    return deletedBook[0];
   }
 
   return {

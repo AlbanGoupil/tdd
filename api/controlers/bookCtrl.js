@@ -74,6 +74,8 @@ export default (bookRepo) => {
     res.status(404).send({
       error: `Book ${id} not found`
     });
+
+    return null;
   }
 
   return {
